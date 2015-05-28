@@ -324,6 +324,9 @@ class LB_Plugin
                                 Loyaltybox::debug_log("LB API called : redeem points ".$totalRedeemPoints."", true);
                             }
                         }
+                        else
+                            $totalRedeemPoints = 0;
+                        
                         // END OF REDEEM 
                         // ISSUE DISCOUNTED AMOUNT AS LB POINTS 
                         //$issuePoints = $allowedDiscount;
@@ -338,6 +341,9 @@ class LB_Plugin
                             foreach ($Balance as $balValue) {
                                 if ($balValue->valueCode == 'Points') {
                                     $earnPoints = $balValue->difference;
+                                    $_SESSION['LB_Session']['lb_points'] = $balValue->amount;
+                                    $_SESSION['LB_Session']['lb_points_difference'] = $balValue->difference;
+                                    $_SESSION['LB_Session']['lb_points_exchangeRate'] = $balValue->exchangeRate;
                                 }
                             }
                         }
