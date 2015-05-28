@@ -62,8 +62,7 @@ class Loyaltybox
     /**
      * @var string
      */
-    public static $stateAPIendpoint = "http://api.loyaltybox.sandip/api/v1/";
-    //public static $stateAPIendpoint = "http://api.loyaltybox.qa.ext.desds.com:8080/api/v1/";
+    public static $stateAPIendpoint = "http://api.loyaltybox.qa.ext.desds.com:8080/api/v1/";
     
     /**
      * @var string
