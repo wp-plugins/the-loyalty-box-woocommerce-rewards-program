@@ -1,0 +1,325 @@
+
+
+
+Exception at 2015-05-06 10:23:57.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+Server was unable to process request. ---> Object reference not set to an instance of an object.
+exception 'LoyaltyboxException' with message 'Server was unable to process request. ---> Object reference not set to an instance of an object.' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(532): Loyaltybox::handleError(Array)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1337): Loyaltybox::makeRequest(Array, 'UpdateSale')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(637): Loyaltybox::verifyUser('9999999999')
+#3 [internal function]: LB_Plugin->verify_user_callback('')
+#4 E:\wamp\www\wptest\wp-includes\plugin.php(496): call_user_func_array(Array, Array)
+#5 E:\wamp\www\wptest\wp-admin\admin-ajax.php(85): do_action('wp_ajax_verify_...')
+#6 {main}
+
+
+Exception at 2015-05-06 10:25:39.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+Server was unable to process request. ---> Object reference not set to an instance of an object.
+exception 'LoyaltyboxException' with message 'Server was unable to process request. ---> Object reference not set to an instance of an object.' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(532): Loyaltybox::handleError(Array)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1337): Loyaltybox::makeRequest(Array, 'UpdateSale')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(637): Loyaltybox::verifyUser('9999999999')
+#3 [internal function]: LB_Plugin->verify_user_callback('')
+#4 E:\wamp\www\wptest\wp-includes\plugin.php(496): call_user_func_array(Array, Array)
+#5 E:\wamp\www\wptest\wp-admin\admin-ajax.php(85): do_action('wp_ajax_verify_...')
+#6 {main}
+
+
+Exception at 2015-05-06 12:39:11.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(151): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(317): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1146): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:39:14.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(151): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(317): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1146): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:39:16.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(151): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(317): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1146): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:39:59.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(151): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(317): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1146): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:40:02.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(151): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(317): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1146): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:40:23.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:40:38.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:316
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1037): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-admin\admin-ajax.php(22): require_once('E:\\wamp\\www\\wpt...')
+#10 {main}
+
+
+Exception at 2015-05-06 12:40:54.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1038): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:41:01.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1038): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:41:32.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1039): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:42:20.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1040): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-blog-header.php(12): require_once('E:\\wamp\\www\\wpt...')
+#10 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#11 {main}
+
+
+Exception at 2015-05-06 12:42:38.000000+00:00
+[CMS]Wordpress 4.1.4 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1040): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(197): Loyaltybox::state_api_make_request('lbrequest', Array, NULL, 'GET')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(154): Loyaltybox::getLbRequestId('1784')
+#3 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(320): LB_Plugin->__construct()
+#4 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1149): LB_Plugin::instance()
+#5 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(1152): lb_plugin_instance()
+#6 E:\wamp\www\wptest\wp-settings.php(215): include_once('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-config.php(80): require_once('E:\\wamp\\www\\wpt...')
+#8 E:\wamp\www\wptest\wp-load.php(29): require_once('E:\\wamp\\www\\wpt...')
+#9 E:\wamp\www\wptest\wp-admin\admin-ajax.php(22): require_once('E:\\wamp\\www\\wpt...')
+#10 {main}
+
+
+Exception at 2015-05-08 04:56:22.000000+00:00
+[CMS]Wordpress 4.1.5 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1040): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(583): Loyaltybox::state_api_make_request('basket', Array, NULL, 'POST')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(307): Loyaltybox::newBasketState('', '1784', 129.99, NULL, Array, 'Paid', '12.999', 0, 0, 347, 1)
+#3 [internal function]: LB_Plugin->woocommerce_thankyou_page_complete_order(347)
+#4 E:\wamp\www\wptest\wp-includes\plugin.php(496): call_user_func_array(Array, Array)
+#5 E:\wamp\www\wptest\wp-content\plugins\woocommerce\templates\checkout\thankyou.php(63): do_action('woocommerce_tha...', 347)
+#6 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\wc-core-functions.php(192): include('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(196): wc_get_template('checkout/thanky...', Array)
+#8 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(62): WC_Shortcode_Checkout::order_received('347')
+#9 [internal function]: WC_Shortcode_Checkout::output('')
+#10 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(70): call_user_func(Array, '')
+#11 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(96): WC_Shortcodes::shortcode_wrapper(Array, '')
+#12 [internal function]: WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#13 E:\wamp\www\wptest\wp-includes\shortcodes.php(283): call_user_func('WC_Shortcodes::...', '', '', 'woocommerce_che...')
+#14 [internal function]: do_shortcode_tag(Array)
+#15 E:\wamp\www\wptest\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(embed|...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#16 [internal function]: do_shortcode('[woocommerce_ch...')
+#17 E:\wamp\www\wptest\wp-includes\plugin.php(213): call_user_func_array('do_shortcode', Array)
+#18 E:\wamp\www\wptest\wp-includes\post-template.php(221): apply_filters('the_content', '[woocommerce_ch...')
+#19 E:\wamp\www\wptest\wp-content\themes\twentyfifteen\content-page.php(22): the_content()
+#20 E:\wamp\www\wptest\wp-includes\template.php(503): require('E:\\wamp\\www\\wpt...')
+#21 E:\wamp\www\wptest\wp-includes\template.php(477): load_template('E:\\wamp\\www\\wpt...', false)
+#22 E:\wamp\www\wptest\wp-includes\general-template.php(171): locate_template(Array, true, false)
+#23 E:\wamp\www\wptest\wp-content\themes\twentyfifteen\page.php(24): get_template_part('content', 'page')
+#24 E:\wamp\www\wptest\wp-includes\template-loader.php(74): include('E:\\wamp\\www\\wpt...')
+#25 E:\wamp\www\wptest\wp-blog-header.php(16): require_once('E:\\wamp\\www\\wpt...')
+#26 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#27 {main}
+
+
+Exception at 2015-05-08 06:33:17.000000+00:00
+[CMS]Wordpress 4.1.5 WooCommerce 2.3.6 Woocommerce-Loyaltybox 0.0.1
+HTTP Error: 500
+exception 'LoyaltyboxException' with message 'HTTP Error: 500' in E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php:317
+Stack trace:
+#0 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(1020): Loyaltybox::handleError(Array, NULL)
+#1 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\includes\loyaltybox.inc.php(563): Loyaltybox::state_api_make_request('basket', Array, NULL, 'POST')
+#2 E:\wamp\www\wptest\wp-content\plugins\loyaltybox\loyaltybox.php(306): Loyaltybox::newBasketState('', '1784', 809.45, NULL, 'Wooden Toy', Array, 'Paid', '139.8', 0, 0, 360, 1)
+#3 [internal function]: LB_Plugin->woocommerce_thankyou_page_complete_order(360)
+#4 E:\wamp\www\wptest\wp-includes\plugin.php(496): call_user_func_array(Array, Array)
+#5 E:\wamp\www\wptest\wp-content\plugins\woocommerce\templates\checkout\thankyou.php(63): do_action('woocommerce_tha...', 360)
+#6 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\wc-core-functions.php(192): include('E:\\wamp\\www\\wpt...')
+#7 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(196): wc_get_template('checkout/thanky...', Array)
+#8 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(62): WC_Shortcode_Checkout::order_received('360')
+#9 [internal function]: WC_Shortcode_Checkout::output('')
+#10 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(70): call_user_func(Array, '')
+#11 E:\wamp\www\wptest\wp-content\plugins\woocommerce\includes\class-wc-shortcodes.php(96): WC_Shortcodes::shortcode_wrapper(Array, '')
+#12 [internal function]: WC_Shortcodes::checkout('', '', 'woocommerce_che...')
+#13 E:\wamp\www\wptest\wp-includes\shortcodes.php(283): call_user_func('WC_Shortcodes::...', '', '', 'woocommerce_che...')
+#14 [internal function]: do_shortcode_tag(Array)
+#15 E:\wamp\www\wptest\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(embed|...', 'do_shortcode_ta...', '[woocommerce_ch...')
+#16 [internal function]: do_shortcode('[woocommerce_ch...')
+#17 E:\wamp\www\wptest\wp-includes\plugin.php(213): call_user_func_array('do_shortcode', Array)
+#18 E:\wamp\www\wptest\wp-includes\post-template.php(221): apply_filters('the_content', '[woocommerce_ch...')
+#19 E:\wamp\www\wptest\wp-content\themes\twentyfifteen\content-page.php(22): the_content()
+#20 E:\wamp\www\wptest\wp-includes\template.php(503): require('E:\\wamp\\www\\wpt...')
+#21 E:\wamp\www\wptest\wp-includes\template.php(477): load_template('E:\\wamp\\www\\wpt...', false)
+#22 E:\wamp\www\wptest\wp-includes\general-template.php(171): locate_template(Array, true, false)
+#23 E:\wamp\www\wptest\wp-content\themes\twentyfifteen\page.php(24): get_template_part('content', 'page')
+#24 E:\wamp\www\wptest\wp-includes\template-loader.php(74): include('E:\\wamp\\www\\wpt...')
+#25 E:\wamp\www\wptest\wp-blog-header.php(16): require_once('E:\\wamp\\www\\wpt...')
+#26 E:\wamp\www\wptest\index.php(17): require('E:\\wamp\\www\\wpt...')
+#27 {main}

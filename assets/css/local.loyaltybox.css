@@ -1,0 +1,150 @@
+#btnRedeem,#btnLoginLB,#btnConnectLB{
+   margin-top: 15px;
+}
+.woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+    width:60%!important;
+}
+ .frm_error{
+color:red;
+}
+
+.frm_success{
+color:green;
+}
+
+.showTips{
+display:none;
+}
+
+.lb_loading,.lb_loading_redeem{
+display:none;
+}
+
+#redeemBox{
+display:none;
+}
+
+/*
+============ old css from example ===========
+
+button.loyaltybox-button{
+    display: inline-block;
+	color: #3498DB;
+	background-color: #ffffff;
+	border: 1px solid #3498DB;
+	border-radius: 5px;
+	height: 34px;
+	cursor: pointer;
+	margin: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	float: none;
+	padding: 0 5px;
+}
+button.loyaltybox-button:hover{
+	background: #eee no-repeat;
+	color: #3498DB;
+}
+button.loyaltybox-button.loyaltybox-connect{
+	background: none no-repeat 3px 50% / auto 80% #FFF;
+	background-size: auto 80%;
+	padding-left: 31px;
+}
+.loyaltybox-unit{
+    color: #3498DB;
+    font-style: italic;
+}
+.loyaltybox-div-cart-page{
+    display: block;
+    width: 100%;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 20px auto;
+    text-align: right;
+}
+.loyaltybox-div-cart-page .loyaltybox-cart-page-contain{
+    display: table;
+    width: 100%;
+}
+.loyaltybox-div-cart-page .loyaltybox-info-div{
+    display: table-cell;
+    text-align: left;
+    padding: 10px;
+}
+.loyaltybox-div-cart-page .loyaltybox-info-contain{
+    display: block;
+    max-width: 500px;
+}
+.loyaltybox-div-cart-page .loyaltybox-action-div{
+    display: table-cell;
+    text-align: right;
+    min-width: 100px;
+    max-width: 200px;
+    padding: 10px;
+}
+.loyaltybox-div-account-page{
+    width: 100%; 
+    display: block; 
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.loyaltybox-block-product-page{
+    width: 100%; 
+    display: block; 
+    text-align: left;
+    margin: 15px 0;
+}
+.woocommerce ul.products li.product .price.loyaltybox-price, 
+.woocommerce-page ul.products li.product .price.loyaltybox-price {
+    margin: 5px 0;
+    font-size: 12px;
+}
+a.loyaltybox-info, a.loyaltybox-info:hover{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+a.loyaltybox-info .amount{
+    float: none;
+}
+span.loyaltybox-info-tag{
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #CCCCCC;
+	display: inline-block;
+	line-height:normal;
+	text-align: center;
+	text-decoration:none;
+	border-radius: 1em;
+    font-size: 1em;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+	width: 1.15em;
+	padding: 0.1em;
+	cursor: pointer;
+	margin: 0 10px;
+	position: relative;
+	overflow: visible;
+	outline: none;
+}
+span.loyaltybox-info-tag:hover{
+	background-color: #B7B7B7;
+}
+
+@media (max-width: 490px) {
+    .loyaltybox-div-cart-page .loyaltybox-info-div, .loyaltybox-div-cart-page .loyaltybox-action-div{
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .loyaltybox-div-cart-page .loyaltybox-action-div .button{
+        width: 100%;
+    }
+}
+*/
