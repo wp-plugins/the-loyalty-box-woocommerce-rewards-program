@@ -22,7 +22,7 @@ if (! in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', ge
     return;
 }
 
-define('LOYALTYBOX_VERSION',                 '0.0.1');
+define('LOYALTYBOX_VERSION',                 '1.0.1');
 define('DEBUG_MODE',                         true);
 define('REQUEST_DEBUG_MODE',                 true);
 define('LOYALTYBOX_DECIMALS',                2);
