@@ -4,7 +4,7 @@ Donate link: http://example.com/
 Tags: loyalty, rewards, woocommerce, engagement, gamification
 Requires at least: 4.1.2
 Tested up to: 4.2.2
-Stable tag: trunk
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
