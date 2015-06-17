@@ -3,7 +3,7 @@
  * Plugin Name: Loyaltybox
  * Plugin URI: http://www.theloyaltybox.com/
  * Description: Extension for WooCommerce adding rewards programme features by The Loyalty Box
- * Version: 0.0.1
+ * Version: 1.0.1
  * Author: The Loyalty Box
  * Author URI: http://www.theloyaltybox.com/
  * Text Domain: loyaltybox
