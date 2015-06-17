@@ -62,7 +62,7 @@ class Loyaltybox
     /**
      * @var string
      */
-    public static $stateAPIendpoint = "http://api.loyaltybox.qa.ext.desds.com:8080/api/v1/";
+    public static $stateAPIendpoint = "http://54.85.223.200/api/v1/";
     
     /**
      * @var string
@@ -480,7 +480,12 @@ class Loyaltybox
     public static function makeRequest($paramArray = null, $methodCall = null, $getDetails = FALSE)
     {
         $url = self::$endpoint;
+        $time_start = microtime(true);
+        //ini_set('default_socket_timeout',1);
+        @session_start();
+        $_SESSION['time_out_error'] = "";
         try {
+            
             $client = new SoapClient($url, array('trace' => 1));
             if ($methodCall == 'Enrollment') {
                 $resultInquiry = $client->__call('Inquiry', $paramArray);
@@ -495,7 +500,7 @@ class Loyaltybox
                         $resultContent = ob_get_contents();
                     @ob_clean();
                     $request = $client->__getLastRequest();
-                    file_put_contents(LOYALTYBOX_REQUEST_LOG, " ".$methodCall."-".date('Y-m-d H:i:s.uP')." ".$info.PHP_EOL." ", FILE_APPEND);
+                    file_put_contents(LOYALTYBOX_REQUEST_LOG, " ".$methodCall."-".date('Y-m-d H:i:s.uP')." ".PHP_EOL." ", FILE_APPEND);
                     file_put_contents(LOYALTYBOX_REQUEST_LOG, $request, FILE_APPEND);
                     file_put_contents(LOYALTYBOX_REQUEST_LOG, $resultContent, FILE_APPEND);
                 }
@@ -507,8 +512,16 @@ class Loyaltybox
                 }
             }
         } catch (Exception $e) {
-            $error = array('message' => $e->getMessage(),'code' => $e->getCode());
-            return self::handleError($error);
+            $time_request = (microtime(true)-$time_start);
+            if(ini_get('default_socket_timeout') < $time_request) {
+                $error = array('message' => "Soap client Timeout error! ".$e->getMessage(),'code' => $e->getCode());
+                $_SESSION['time_out_error'] = "Unable to reach Loyalty Box - please check that port 80 is open.";
+                return self::handleError($error);
+            } else {
+                $error = array('message' => $e->getMessage(),'code' => $e->getCode());
+                return self::handleError($error);
+            }
+            
         }
     }
     
@@ -823,12 +836,12 @@ class Loyaltybox
                         $errorMessage = $UpdateClientResult->errorMessage;
                         $errorCode = $errorMessage->errorCode;
                         self::debug_log("Response : ".$errorMessage->briefMessage, true);
-                        $returnArr = array('status' => 0, 'message' => $errorMessage->briefMessage);
+                        $returnArr = array('status' => 0, 'message' => $errorMessage->briefMessage.$_SESSION['time_out_error']);
                     }
                     // END OF ENROL
                 } else {
                     self::debug_log("Response : ".$errorMessage->briefMessage, true);
-                    $returnArr = array('status' => 0, 'message' => $errorMessage->briefMessage);
+                    $returnArr = array('status' => 0, 'message' => $errorMessage->briefMessage.$_SESSION['time_out_error']);
                 }
                 
             }
@@ -1383,7 +1396,7 @@ class Loyaltybox
             } else {
                 $errorMessage = $InquiryResult->errorMessage;
                 $errorCode = $errorMessage->errorCode;
-                $returnArr = array('status' => 0, 'message' => $errorMessage->briefMessage);
+                $returnArr = array('status' => 0, 'message' => $errorMessage->briefMessage.$_SESSION['time_out_error']);
             }
         return $returnArr;
     }

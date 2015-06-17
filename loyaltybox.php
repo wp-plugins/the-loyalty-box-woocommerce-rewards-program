@@ -155,10 +155,19 @@ class LB_Plugin
             $_SESSION['LB_Session_RequestId'] = $lb_request_id;
         }
         Loyaltybox::init($rewardProgrammeName,$clientId, $locationId, $userName, $password,$friendly_message,$lb_request_id);
-
+        
     }
     
-    /**
+    public static function checkSocketTimeOut(){
+        if(isset($_SESSION['time_out_error']))
+            {
+                if(!empty($_SESSION['time_out_error'])){
+                     echo "<div class='woocommerce-info'>".$_SESSION['time_out_error']."</div>";
+                }
+            }
+    }
+
+        /**
     * woocommerce_thankyou_page_complete_order.
     * 
     * This function send final cart to loyaltybox
@@ -565,7 +574,7 @@ class LB_Plugin
             
             
             $allowedDiscount = Loyaltybox::sendCartUpdate($txtPhoneNumber,$CartContentsTotal,$lineItems, 0);
-
+            self::checkSocketTimeOut();
             if ($allowedDiscount > 0) {
                 self::generate_discount_coupon($allowedDiscount, 'fixed_cart');
             }
@@ -803,6 +812,7 @@ class LB_Plugin
                 // confirm loyalty points available or not and update to session if available.
                 $CardOrPhoneNumber = $LB_Session['Phone Number'];
                 $CardPoints = LoyaltyBox::getCardPoints($CardOrPhoneNumber);
+                if($CardPoints){
                 $InquiryResult = $CardPoints->InquiryResult;
                 $balances = $InquiryResult->balances;
                 $Balance = $balances->balance;
@@ -839,6 +849,7 @@ class LB_Plugin
                 if($totalRedeemPoints == 0){
                     $totalRedeemPoints = $txtRedeemPoints;
                 }
+                
                 if ($txtRedeemPoints > 0 && $totalRedeemPoints <= $CartTotal && is_numeric($txtRedeemPoints)) {
                     if ($_SESSION['LB_Session']['lb_points'] >= $totalRedeemPoints) {
                         // generate a coupon for allowedRedeemAmt and apply to the cart.
@@ -936,6 +947,9 @@ class LB_Plugin
                     }
                 } else {
                     echo json_encode(array('status' => 0, 'message' => "Please enter valid Loyalty Points."));
+                }
+                } else {
+                    echo json_encode(array('status' => 0, 'message' => $_SESSION['time_out_error']));
                 }
             } else {
                 echo json_encode(array('status' => 0, 'message' => "Please login to the ".Loyaltybox::$rewardProgrammeName."."));
