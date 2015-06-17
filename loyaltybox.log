@@ -1804,3 +1804,183 @@
 
 
 2015-05-19 08:18:25.000000+00:00 => Rendered redeem point form
+
+
+2015-05-19 08:59:27.000000+00:00 => LB API called : RequestLineItemRedemption
+
+
+2015-05-19 08:59:27.000000+00:00 => LB API called : got Discount25.998%
+
+
+2015-05-19 08:59:27.000000+00:00 => Updated Coupon for cart:LB_9702
+
+
+2015-05-19 08:59:27.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-19 08:59:27.000000+00:00 => Rendered redeem point form
+
+
+2015-05-19 08:59:36.000000+00:00 => Rendered Connect with Loyalty Box button
+
+
+2015-05-21 09:02:23.000000+00:00 => LB API called : RequestLineItemRedemption
+
+
+2015-05-21 09:02:23.000000+00:00 => LB API called : got Discount139.8%
+
+
+2015-05-21 09:02:23.000000+00:00 => Created New Coupon for cart:LB_5731
+
+
+2015-05-21 09:02:23.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-21 09:02:23.000000+00:00 => Rendered redeem point form
+
+
+2015-05-21 09:05:24.000000+00:00 => LB API called : RequestLineItemRedemption
+
+
+2015-05-21 09:05:24.000000+00:00 => LB API called : got Discount139.8%
+
+
+2015-05-21 09:05:24.000000+00:00 => Updated Coupon for cart:LB_5731
+
+
+2015-05-21 09:05:24.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-21 09:05:24.000000+00:00 => Rendered redeem point form
+
+
+2015-05-21 10:25:54.000000+00:00 => LB API called : Inquiry to check Points Balance
+
+
+2015-05-21 10:25:54.000000+00:00 => Created New Coupon for redeem LB Points:R_5_1432203954
+
+
+2015-05-21 10:26:00.000000+00:00 => LB API called : RequestLineItemRedemption
+
+
+2015-05-21 10:26:00.000000+00:00 => LB API called : got Discount139.8%
+
+
+2015-05-21 10:26:00.000000+00:00 => Updated Coupon for cart:LB_5731
+
+
+2015-05-21 10:26:00.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-21 10:26:00.000000+00:00 => Rendered redeem point form
+
+
+2015-05-21 10:26:22.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-21 10:26:22.000000+00:00 => Rendered redeem point form
+
+
+2015-05-21 10:26:56.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-21 10:26:56.000000+00:00 => Rendered redeem point form
+
+
+2015-05-21 10:27:13.000000+00:00 => LB API called : Inquiry to check Points Balance
+
+
+2015-05-21 10:27:13.000000+00:00 => Created New Coupon for redeem LB Points:R_10_1432204033
+
+
+2015-05-21 10:27:16.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-21 10:27:16.000000+00:00 => Rendered redeem point form
+
+
+2015-05-27 12:03:29.000000+00:00 => Rendered Connect with Loyalty Box button
+
+
+2015-05-27 12:03:49.000000+00:00 => LB API called : RequestLineItemRedemption
+
+
+2015-05-27 12:03:49.000000+00:00 => LB API called : got Discount139.8%
+
+
+2015-05-27 12:03:49.000000+00:00 => Created New Coupon for cart:LB_5727
+
+
+2015-05-27 12:03:49.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-27 12:03:49.000000+00:00 => Rendered redeem point form
+
+
+2015-05-27 12:04:10.000000+00:00 => LB API called : Inquiry to check Points Balance
+
+
+2015-05-27 12:04:10.000000+00:00 => Created New Coupon for redeem LB Points:R_30_1432728250
+
+
+2015-05-27 12:04:12.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-27 12:04:12.000000+00:00 => Rendered redeem point form
+
+
+2015-05-27 12:04:17.000000+00:00 => Rendered session user with his LB Points
+
+
+2015-05-27 12:04:17.000000+00:00 => Rendered redeem point form
+
+
+2015-05-27 12:05:17.000000+00:00 => CALLED STATE API: Status-A Message-Created a new basket
+
+
+2015-05-27 12:05:29.000000+00:00 => CALLED STATE API: Status-A Message-Basket updated
+
+
+2015-05-27 12:05:34.000000+00:00 => Order process after checkout started order id: 383
+
+
+2015-05-27 12:06:24.000000+00:00 => Order process after checkout started order id: 383
+
+
+2015-05-27 12:06:55.000000+00:00 => Order process after checkout started order id: 383
+
+
+2015-05-27 12:09:22.000000+00:00 => Order process after checkout started order id: 383
+
+
+2015-05-27 12:09:22.000000+00:00 => Order processed started
+
+
+2015-05-27 12:09:26.000000+00:00 => LB API called sendCartFinal(commited): RequestLineItemRedemption
+
+
+2015-05-27 12:09:26.000000+00:00 => LB API called : got Discount 139.8%
+
+
+2015-05-27 12:09:30.000000+00:00 => LB API called sendCartFinal(commited): RequestLineItemRedemption
+
+
+2015-05-27 12:09:34.000000+00:00 => LB API called : UpdateSale
+
+
+2015-05-27 12:09:34.000000+00:00 => LB API called : redeem points 30
+
+
+2015-05-27 12:09:38.000000+00:00 => LB API called issuePoints: UpdateSale
+
+
+2015-05-27 12:09:38.000000+00:00 => Issued Gift Issued .
+
+
+2015-05-27 12:09:38.000000+00:00 => Earn loyalty points 65.919.
+
+
+2015-05-27 12:09:38.000000+00:00 => CALLED STATE API: Status-A Message-Basket updated
+
+
+2015-05-27 12:09:38.000000+00:00 => End of order processed
