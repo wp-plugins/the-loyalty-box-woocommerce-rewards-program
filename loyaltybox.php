@@ -155,10 +155,19 @@ class LB_Plugin
             $_SESSION['LB_Session_RequestId'] = $lb_request_id;
         }
         Loyaltybox::init($rewardProgrammeName,$clientId, $locationId, $userName, $password,$friendly_message,$lb_request_id);
-
+        
     }
     
-    /**
+    public static function checkSocketTimeOut(){
+        if(isset($_SESSION['time_out_error']))
+            {
+                if(!empty($_SESSION['time_out_error'])){
+                     echo "<div class='woocommerce-info'>".$_SESSION['time_out_error']."</div>";
+                }
+            }
+    }
+
+        /**
     * woocommerce_thankyou_page_complete_order.
     * 
     * This function send final cart to loyaltybox
@@ -184,6 +193,8 @@ class LB_Plugin
             $order = new WC_Order($order_id);
             $CartContents = $order->get_items();
             $CartContentsTotal = $order->get_subtotal();
+            $CartGrandTotal = $order->get_total();
+            
             $usedCoupons = $order->get_used_coupons();
             $CartDiscount = $order->get_total_discount();
             $isLoyaltyIssued = 0;
@@ -262,7 +273,7 @@ class LB_Plugin
                     }
 
                     Loyaltybox::debug_log("LB API called : got Discount " . $allowedDiscount . "%", true);
-                    if ($allowedDiscount > 0) {
+                    //if ($allowedDiscount > 0) {
                             /*
                             * // NO NEED TO COMMIT TRANSACTION AS ITS FINAL CART ALREADY COMMITED.*/
                             $CommitTransaction = 1;
@@ -272,60 +283,63 @@ class LB_Plugin
                         $RequestLineItemRedemptionResult = $result->RequestLineItemRedemptionResult;
                         $identification = $RequestLineItemRedemptionResult->identification;
                         
-            // REDEEM POINTS IF ANY
-            // Check actual redeem coupons amound
-            $CartAppliedCoupons = $cartCoupons;
-            $actualRedeemPoints = 0;
-            foreach ($CartAppliedCoupons as $cval=>$ckey){
-                if(!empty($ckey['code'])){
-                    $couponFor = explode('_', $ckey['code']);
-                    if(isset($couponFor[0]))
-                    if($couponFor[0] == 'r')
-                    {
-                        if(isset($couponFor[1])){
-                            $actualRedeemPoints = $actualRedeemPoints + $couponFor[1];
+                        // REDEEM POINTS IF ANY
+                        // Check actual redeem coupons amound
+                        $CartAppliedCoupons = $cartCoupons;
+                        $actualRedeemPoints = 0;
+                        foreach ($CartAppliedCoupons as $cval=>$ckey){
+                            if(!empty($ckey['code'])){
+                                $couponFor = explode('_', $ckey['code']);
+                                if(isset($couponFor[0]))
+                                if($couponFor[0] == 'r')
+                                {
+                                    if(isset($couponFor[1])){
+                                        $actualRedeemPoints = $actualRedeemPoints + $couponFor[1];
+                                    }
+                                }
+                            }
                         }
-                    }
-                }
-            }
-            $_SESSION['LB_Session']['totalRedeemPoints'] = $actualRedeemPoints;
-            // end of check..
-            $totalRedeemPoints = $_SESSION['LB_Session']['totalRedeemPoints'];
-            $CardOrPhoneNumber = $LB_Session['Phone Number'];
-            if($totalRedeemPoints > 0)
-            {
-                $redeemResult = Loyaltybox::redeemPoints($CardOrPhoneNumber,$lineItems,$totalRedeemPoints);
-                $UpdateSaleResult = $redeemResult->UpdateSaleResult;
-                $standardHeader = $UpdateSaleResult->standardHeader;
-                $identification = $UpdateSaleResult->identification;
-                Loyaltybox::debug_log("LB API called : UpdateSale", true);
-                if ($standardHeader->status == 'A') {
-                    $_SESSION['LB_Session']['totalRedeemPoints'] = 0;
-                    $balances = $UpdateSaleResult->balances;
-                    $Balance = $balances->Balance;
-                    foreach ($Balance as $balValue) {
-                        if ($balValue->valueCode == 'Discount') {
-                            $_SESSION['LB_Session']['lb_discount'] = $balValue->amount;
-                            $_SESSION['LB_Session']['lb_discount_difference'] = $balValue->difference;
-                            $_SESSION['LB_Session']['lb_discount_exchangeRate'] = $balValue->exchangeRate;
-                        } elseif ($balValue->valueCode == 'Points') {
-                            $_SESSION['LB_Session']['lb_points'] = $balValue->amount;
-                            $_SESSION['LB_Session']['lb_points_difference'] = $balValue->difference;
-                            $_SESSION['LB_Session']['lb_points_exchangeRate'] = $balValue->exchangeRate;
-                        } elseif ($balValue->valueCode == 'ZAR') {
-                            $_SESSION['LB_Session']['lb_zar'] = $balValue->amount;
-                            $_SESSION['LB_Session']['lb_zar_difference'] = $balValue->difference;
-                            $_SESSION['LB_Session']['lb_zar_exchangeRate'] = $balValue->exchangeRate;
-                        }
-                    }
+                        $_SESSION['LB_Session']['totalRedeemPoints'] = $actualRedeemPoints;
+                        // end of check..
+                        $totalRedeemPoints = $_SESSION['LB_Session']['totalRedeemPoints'];
+                        $CardOrPhoneNumber = $LB_Session['Phone Number'];
+                        if($totalRedeemPoints > 0)
+                        {
+                            $redeemResult = Loyaltybox::redeemPoints($CardOrPhoneNumber,$lineItems,$totalRedeemPoints);
+                            $UpdateSaleResult = $redeemResult->UpdateSaleResult;
+                            $standardHeader = $UpdateSaleResult->standardHeader;
+                            $identification = $UpdateSaleResult->identification;
+                            Loyaltybox::debug_log("LB API called : UpdateSale", true);
+                            if ($standardHeader->status == 'A') {
+                                $_SESSION['LB_Session']['totalRedeemPoints'] = 0;
+                                $balances = $UpdateSaleResult->balances;
+                                $Balance = $balances->Balance;
+                                foreach ($Balance as $balValue) {
+                                    if ($balValue->valueCode == 'Discount') {
+                                        $_SESSION['LB_Session']['lb_discount'] = $balValue->amount;
+                                        $_SESSION['LB_Session']['lb_discount_difference'] = $balValue->difference;
+                                        $_SESSION['LB_Session']['lb_discount_exchangeRate'] = $balValue->exchangeRate;
+                                    } elseif ($balValue->valueCode == 'Points') {
+                                        $_SESSION['LB_Session']['lb_points'] = $balValue->amount;
+                                        $_SESSION['LB_Session']['lb_points_difference'] = $balValue->difference;
+                                        $_SESSION['LB_Session']['lb_points_exchangeRate'] = $balValue->exchangeRate;
+                                    } elseif ($balValue->valueCode == 'ZAR') {
+                                        $_SESSION['LB_Session']['lb_zar'] = $balValue->amount;
+                                        $_SESSION['LB_Session']['lb_zar_difference'] = $balValue->difference;
+                                        $_SESSION['LB_Session']['lb_zar_exchangeRate'] = $balValue->exchangeRate;
+                                    }
+                                }
 
-                    Loyaltybox::debug_log("LB API called : redeem points ".$totalRedeemPoints."", true);
-                }
-            }
-            // END OF REDEEM 
-            // ISSUE DISCOUNTED AMOUNT AS LB POINTS 
-                        $issuePoints = $allowedDiscount;
-                        $issueResult = Loyaltybox::issuePoints($txtPhoneNumber, $lineItems, $issuePoints);
+                                Loyaltybox::debug_log("LB API called : redeem points ".$totalRedeemPoints."", true);
+                            }
+                        }
+                        else
+                            $totalRedeemPoints = 0;
+                        
+                        // END OF REDEEM 
+                        // ISSUE DISCOUNTED AMOUNT AS LB POINTS 
+                        //$issuePoints = $allowedDiscount;
+                        $issueResult = Loyaltybox::issuePoints($txtPhoneNumber, $lineItems, $CartGrandTotal);
                         $UpdateSaleResult = $issueResult->UpdateSaleResult;
                         $standardHeader = $UpdateSaleResult->standardHeader;
                         $earnPoints = 0;
@@ -336,13 +350,16 @@ class LB_Plugin
                             foreach ($Balance as $balValue) {
                                 if ($balValue->valueCode == 'Points') {
                                     $earnPoints = $balValue->difference;
+                                    $_SESSION['LB_Session']['lb_points'] = $balValue->amount;
+                                    $_SESSION['LB_Session']['lb_points_difference'] = $balValue->difference;
+                                    $_SESSION['LB_Session']['lb_points_exchangeRate'] = $balValue->exchangeRate;
                                 }
                             }
                         }
                         $isLoyaltyIssued = 1;
                         Loyaltybox::debug_log("Issued Gift Issued " . $issuePoints . ".", true);
                         Loyaltybox::debug_log("Earn loyalty points " . $earnPoints . ".", true);
-            // STATE API CALL
+                        // STATE API CALL
                         $cartId = '';
                         $merchantId = Loyaltybox::$clientId;
                         $basketTotal = $CartContentsTotal;
@@ -350,7 +367,7 @@ class LB_Plugin
                         $discounts = array("cart_discount" => $CartDiscount, "applied_coupon" => $CartAppliedCoupons);
                         $basketState = 'Paid';
 
-            // REMOVED CURRENT SESSION COUPON FROM DB.
+                        // REMOVED CURRENT SESSION COUPON FROM DB.
                         $coupon_code = "";
                         if (isset($_SESSION['LB_Session']["LB_COUPON"])) {
                             if (!empty($_SESSION['LB_Session']["LB_COUPON"])) {
@@ -358,18 +375,10 @@ class LB_Plugin
                                 $_SESSION['LB_Session']["LB_COUPON"] = "";
                             }
                         }
-                        /* if(!empty($coupon_code))
-                          {
-                          $coupon_data = new WC_Coupon($coupon_code);
-                          if(isset($coupon_data->id))
-                          if(!empty($coupon_data->id))
-                          {
-                                wp_delete_post($coupon_data->id);
-                          }
-                          } */
+                        
                         Loyaltybox::newBasketState($cartId, $merchantId, $basketTotal, $lbRef, $lbCustomerName, $discounts, $basketState, $earnPoints, $totalRedeemPoints, $apiserverBasketId,$order_id,$isLoyaltyIssued);
                         $_SESSION['LB_Session_RequestId'] = 0;
-                    }
+                    //}
                 }
             }
             Loyaltybox::debug_log("End of order processed", true);
@@ -565,7 +574,7 @@ class LB_Plugin
             
             
             $allowedDiscount = Loyaltybox::sendCartUpdate($txtPhoneNumber,$CartContentsTotal,$lineItems, 0);
-
+            self::checkSocketTimeOut();
             if ($allowedDiscount > 0) {
                 self::generate_discount_coupon($allowedDiscount, 'fixed_cart');
             }
@@ -803,6 +812,7 @@ class LB_Plugin
                 // confirm loyalty points available or not and update to session if available.
                 $CardOrPhoneNumber = $LB_Session['Phone Number'];
                 $CardPoints = LoyaltyBox::getCardPoints($CardOrPhoneNumber);
+                if($CardPoints){
                 $InquiryResult = $CardPoints->InquiryResult;
                 $balances = $InquiryResult->balances;
                 $Balance = $balances->balance;
@@ -839,6 +849,7 @@ class LB_Plugin
                 if($totalRedeemPoints == 0){
                     $totalRedeemPoints = $txtRedeemPoints;
                 }
+                
                 if ($txtRedeemPoints > 0 && $totalRedeemPoints <= $CartTotal && is_numeric($txtRedeemPoints)) {
                     if ($_SESSION['LB_Session']['lb_points'] >= $totalRedeemPoints) {
                         // generate a coupon for allowedRedeemAmt and apply to the cart.
@@ -936,6 +947,9 @@ class LB_Plugin
                     }
                 } else {
                     echo json_encode(array('status' => 0, 'message' => "Please enter valid Loyalty Points."));
+                }
+                } else {
+                    echo json_encode(array('status' => 0, 'message' => $_SESSION['time_out_error']));
                 }
             } else {
                 echo json_encode(array('status' => 0, 'message' => "Please login to the ".Loyaltybox::$rewardProgrammeName."."));
